@@ -65,6 +65,15 @@ class TestUserCase(object):
 		assert self.user.is_login
 		self.user.logout()
 		assert not self.user.is_login
+		
+	def test_db_get(self):
+		print 'test5'
+		self.SetUp()
+		User.db_get()
+	
+	def test_db_create(self):
+		print 'test6'
+		self.SetUp()
 
 	def run_all_test(self):
 		"""
@@ -75,6 +84,8 @@ class TestUserCase(object):
 		self.test_user_login_success()
 		self.test_user_login_fail()
 		self.test_user_logout()
+		self.test_db_get()
+		self.test_db_create()
 
 
 # TODO: Homework
@@ -186,6 +197,6 @@ class TestMain(object):
 
 if __name__ == '__main__':
 	TestUserCase().run_all_test()
-	TestCategoryCase().run_all_test()
-	TestWalletCase().run_all_test()
-	TestMain().run_all_test()
+	#TestCategoryCase().run_all_test()
+	#TestWalletCase().run_all_test()
+	#TestMain().run_all_test()

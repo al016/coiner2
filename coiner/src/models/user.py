@@ -129,7 +129,7 @@ class User(object):
 				raise DoesNotExist('Пользователь не существует')
     
 	@classmethod
-	def db_create(cls, username, ):
+	def db_create(cls, username):
 		user = cls(**kwargs)
 		with open(cls.path_to_db, 'ra') as f:
 			fields = f.readline().strip().split(',')
